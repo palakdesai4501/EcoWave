@@ -1,4 +1,11 @@
 /* Global Styles */
+:root {
+    --color-primary: #E4E0E1;
+    --color-secondary: #D6C0B3;
+    --color-accent: #493628;
+    --shadow: 0 4px 6px rgba(73, 54, 40, 0.1);
+}
+
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -207,51 +214,145 @@ body {
     display: block;
 }
 
-/* Form Styles */
+/* Form Container and Page Wrapper */
+.page-wrapper {
+    min-height: 100vh;
+    background-color: var(--color-primary);
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .form-container {
+    background-color: white;
+    border-radius: 20px;
+    padding: 2.5rem;
+    width: 100%;
     max-width: 600px;
-    margin: 50px auto;
-    background-color: #E4E0E1;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(73, 54, 40, 0.1);
+    box-shadow: var(--shadow);
+    position: relative;
+    overflow: hidden;
 }
 
+.form-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(to right, var(--color-secondary), var(--color-accent));
+}
+
+/* Form Title */
 .form-title {
-    color: #493628;
-    font-size: 30px;
-    font-weight: bold;
+    color: var(--color-accent);
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
     text-align: center;
-    margin-bottom: 20px;
+    position: relative;
 }
 
+/* Form Groups */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    color: var(--color-accent);
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+/* Input Styles */
 .form-input,
-.form-dropdown,
+.form-select,
 .form-textarea {
     width: 100%;
-    padding: 12px;
-    margin-bottom: 15px;
-    border: 1px solid #D6C0B3;
-    border-radius: 5px;
-    font-size: 16px;
-    background-color: #E4E0E1;
-    color: #493628;
+    padding: 0.75rem 1rem;
+    border: 2px solid var(--color-secondary);
+    border-radius: 10px;
+    background-color: var(--color-primary);
+    transition: all 0.3s ease;
+    font-size: 1rem;
 }
 
-.form-submit {
-    width: 100%;
-    padding: 12px;
-    background-color: #493628;
-    color: #E4E0E1;
-    border: none;
-    border-radius: 5px;
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    background-color: white;
+    box-shadow: 0 0 0 3px rgba(214, 192, 179, 0.2);
+}
+
+.form-textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* File Input Styling */
+.file-label {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--color-secondary);
+    color: var(--color-accent);
+    border-radius: 10px;
     cursor: pointer;
-    font-size: 18px;
-    transition: background-color 0.3s;
+    transition: all 0.3s ease;
 }
 
-.form-submit:hover {
-    background-color: #AB886D;
+.file-label:hover {
+    background-color: var(--color-accent);
+    color: var(--color-primary);
+}
+
+.file-input {
+    display: none;
+}
+
+.file-name {
+    margin-left: 1rem;
+    color: var(--color-accent);
+}
+
+/* Submit Button */
+.submit-button {
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--color-accent);
+    color: var(--color-primary);
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+}
+
+.submit-button:hover {
+    background-color: var(--color-secondary);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+}
+
+/* Custom Select Styling */
+.form-select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23493628' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    padding-right: 2.5rem;
+}
+
+/* Placeholder Styling */
+::placeholder {
+    color: #999;
+    opacity: 0.8;
 }
 
 /* Error Message */
@@ -307,4 +408,21 @@ body {
     .faq-question h3 {
         font-size: 1.2rem;
     }
+
+    .page-wrapper {
+        padding: 1rem;
+    }
+
+    .form-container {
+        padding: 1.5rem;
+    }
+
+    .form-title {
+        font-size: 1.5rem;
+    }
+}
+
+/* Focus States */
+*:focus {
+    outline: none;
 }
