@@ -361,16 +361,6 @@ body {
     min-height: 400px;
 }
 
-.form-container::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 6px;
-    background: linear-gradient(to right, #D6C0B3, #493628);
-}
-
 /* Form Title */
 .form-title {
     font-size: 2rem;
