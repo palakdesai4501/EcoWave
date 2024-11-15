@@ -343,22 +343,22 @@ body {
 /* Form Container and Page Wrapper */
 .page-wrapper {
     min-height: 100vh;
-    background-color: var(--color-primary);
+    background-color: #E4E0E1;
     padding: 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+
 .form-container {
-    background-color: white;
-    border-radius: 20px;
+    max-width: 800px;
+    margin: 4rem auto;
     padding: 2.5rem;
-    width: 100%;
-    max-width: 600px;
-    box-shadow: var(--shadow);
-    position: relative;
-    overflow: hidden;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    min-height: 400px;
 }
 
 .form-container::before {
@@ -368,18 +368,69 @@ body {
     left: 0;
     right: 0;
     height: 6px;
-    background: linear-gradient(to right, var(--color-secondary), var(--color-accent));
+    background: linear-gradient(to right, #D6C0B3, #493628);
 }
 
 /* Form Title */
 .form-title {
-    color: var(--color-accent);
     font-size: 2rem;
-    font-weight: 700;
+    font-weight: 600;
+    color: #047857;
     margin-bottom: 2rem;
-    text-align: center;
-    position: relative;
 }
+
+.form-container input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+form p {
+    margin-bottom: 1.5rem;
+}
+
+form label {
+    display: block;
+    color: #493628;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+form input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 2px solid #D6C0B3;
+    border-radius: 10px;
+    background-color: #E4E0E1;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+form input:focus {
+    outline: none;
+    border-color: #493628;
+    background-color: white;
+    box-shadow: 0 0 0 3px rgba(214, 192, 179, 0.2);
+}
+
+.form-submit {
+    background-color: #4b3529;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.form-submit:hover {
+    background-color: #3b291f;
+}
+
+
 
 /* Form Groups */
 .form-group {
@@ -391,6 +442,48 @@ body {
     color: var(--color-accent);
     margin-bottom: 0.5rem;
     font-weight: 500;
+}
+
+.ticket-info {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: #f8fafc;
+    border-radius: 4px;
+}
+
+.ticket-info h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: #1f2937;
+}
+
+.ticket-info p {
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.ticket-info strong {
+    color: #4b5563;
+}
+
+.ticket-info ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.ticket-info li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+/* Error message styling */
+.error {
+    color: #dc2626;
+    padding: 1rem;
+    background-color: #fee2e2;
+    border-radius: 4px;
+    margin-top: 1rem;
 }
 
 /* Input Styles */
