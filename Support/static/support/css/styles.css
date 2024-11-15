@@ -288,14 +288,13 @@ body {
     padding: 0 20px;
 }
 
-.faq-answer.active {
-    padding: 35px;
-}
 
 .faq-answer p {
-    color: #493628;
     line-height: 1.6;
     margin: 0;
+    font-size: 1.1rem;
+    color: #493628;
+    font-weight: 500;
 }
 
 /* Query Container */
