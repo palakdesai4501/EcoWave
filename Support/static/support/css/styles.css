@@ -353,6 +353,7 @@ body {
 
 .form-container {
     max-width: 800px;
+    width: 50%;
     margin: 4rem auto;
     padding: 2.5rem;
     background-color: #ffffff;
