@@ -35,9 +35,11 @@
     </div>
 </div>
 
-<div class="query-box">
-    <h2>Have a Question?</h2>
-    <p>Browse our FAQs or raise a new query</p>
-    <a href="{% url 'support:submit_query' %}" class="raise-query-link">Raise Query</a>
-</div>
+<div class="query-container">
+        <div class="query-content">
+            <h2>Could not find your question?</h2>
+            <p>Raise a query and we'll get back to you.</p>
+            <a href="{% url 'support:submit_query' %}" class="query-button">Raise Query</a>
+        </div>
+    </div>
 {% endblock %}
