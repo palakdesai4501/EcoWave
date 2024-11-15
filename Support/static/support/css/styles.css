@@ -1,10 +1,9 @@
 /* Global Styles */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f0f0f0;
-    padding: 0; /* Remove padding around the body */
-    margin: 0; /* Remove margin around the body */
-    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+    background-color: #E4E0E1;
 }
 
 /* Alert Styles */
@@ -17,9 +16,133 @@ body {
 
 /* Container Styles */
 .container {
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0px;
+}
+
+/* Banner Styles */
+.banner {
+    background-color: #493628;
+    color: #E4E0E1;
+    padding: 60px 0;
+    text-align: right;
+    margin-top: 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.banner-content {
+    max-width: 600px;
+    margin-right: 50px;
+    color: #E4E0E1;
+}
+
+.banner h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #D6C0B3;
+}
+
+.banner p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    color: #E4E0E1;
+}
+
+/* Support Container and Options */
+.support-container {
+    display: flex;
+    padding: 40px;
+    background-color: #E4E0E1;
+    gap: 40px;
+    min-height: 500px;
+}
+
+.support-image {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.support-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(73, 54, 40, 0.2);
+}
+
+.options {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Ticket Styles */
+.ticket {
+    font-size: 24px;
+    background-color: #D6C0B3;
+    padding: 20px 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(73, 54, 40, 0.2);
+    color: #493628;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+}
+
+.ticket:hover {
+    background-color: #AB886D;
+    color: #E4E0E1;
+    transform: translateX(10px);
+}
+
+.ticket-text {
+    font-weight: 500;
+}
+
+/* Query Box Styles */
+.query-box {
+    background-color: #D6C0B3;
+    margin: 40px;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(73, 54, 40, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.query-box h2 {
+    color: #493628;
+    margin: 0;
+    font-size: 1.8em;
+}
+
+.query-box p {
+    color: #493628;
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.raise-query-link {
+    background-color: #493628;
+    color: #E4E0E1;
+    padding: 12px 24px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.raise-query-link:hover {
+    background-color: #AB886D;
+    transform: translateY(-2px);
 }
 
 /* FAQ Styles */
@@ -27,28 +150,35 @@ body {
     text-align: center;
     margin-bottom: 30px;
     font-size: 2.5rem;
-    color: rgb(5, 150, 105); /* Updated color */
+    color: #493628;
 }
 
 .accordion {
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(73, 54, 40, 0.1);
+    background-color: #E4E0E1;
 }
 
 .faq-item {
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #D6C0B3;
     overflow: hidden;
 }
 
 .faq-question {
-    background-color: rgb(5, 150, 105); /* Updated color */
-    color: #fff;
+    background-color: #D6C0B3;
+    color: #493628;
     padding: 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.faq-question:hover {
+    background-color: #AB886D;
+    color: #E4E0E1;
 }
 
 .faq-question h3 {
@@ -58,61 +188,37 @@ body {
 
 .accordion-btn {
     background-color: transparent;
-    color: #fff;
     border: none;
     font-size: 1.5rem;
     cursor: pointer;
     transition: transform 0.3s;
-}
-
-.accordion-btn:hover {
-    transform: scale(1.1);
+    color: inherit;
 }
 
 .faq-answer {
-    padding: 15px;
-    background-color: #E8F5E9;
+    padding: 20px;
+    background-color: #E4E0E1;
     display: none;
     overflow: hidden;
-    transition: max-height 0.3s ease-out;
+    transition: all 0.3s ease-out;
 }
 
 .faq-item.active .faq-answer {
     display: block;
-    max-height: 500px;
-}
-
-.faq-answer p {
-    margin: 0;
-    font-size: 1.2rem;
-    line-height: 1.6;
-}
-
-@media (max-width: 768px) {
-    .faq-heading {
-        font-size: 2rem;
-    }
-
-    .faq-question h3 {
-        font-size: 1.2rem;
-    }
-
-    .faq-answer p {
-        font-size: 1rem;
-    }
 }
 
 /* Form Styles */
 .form-container {
     max-width: 600px;
     margin: 50px auto;
-    background-color: #ffffff;
+    background-color: #E4E0E1;
     padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 20px rgba(73, 54, 40, 0.1);
 }
 
 .form-title {
+    color: #493628;
     font-size: 30px;
     font-weight: bold;
     text-align: center;
@@ -121,25 +227,22 @@ body {
 
 .form-input,
 .form-dropdown,
-.form-textarea,
-.form-file {
+.form-textarea {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     margin-bottom: 15px;
-    border: 1px solid #ccc;
+    border: 1px solid #D6C0B3;
     border-radius: 5px;
     font-size: 16px;
-}
-
-.form-dropdown {
-    background-color: #f9fbe7;
+    background-color: #E4E0E1;
+    color: #493628;
 }
 
 .form-submit {
     width: 100%;
-    padding: 10px;
-    background-color: rgb(5, 150, 105); /* Updated color */
-    color: #ffffff;
+    padding: 12px;
+    background-color: #493628;
+    color: #E4E0E1;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -148,123 +251,60 @@ body {
 }
 
 .form-submit:hover {
-    background-color: rgb(5, 150, 105); /* Updated color */
+    background-color: #AB886D;
 }
 
-/* Banner Styles */
-.banner {
-    background-color: rgb(5, 150, 105); /* Updated color */
-    color: white;
-    padding: 60px 0;
-    text-align: center;
-    margin-top: 0; /* Ensure no space above */
-}
-
-.banner-content {
-    max-width: 600px;
-    margin: 0 auto;
-    color: white;
-
-}
-
-.banner h1 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-}
-
-.banner p {
-    font-size: 1.2em;
-    margin-bottom: 20px;
-}
-
-/* Ticket Styles */
-.ticket {
-    font-size: 24px;
-    margin-top: 20px;
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: inline-block;
-    color: rgb(5, 150, 105); /* Updated color */
-    text-decoration: none;
-}
-
-.ticket-label {
-    color: rgb(5, 150, 105); /* Updated color */
-    font-size: 1.2em;
-    margin-bottom: 10px;
-}
-
-.ticket-number {
-    font-size: 1.5em;
-}
-
-.plant-image {
-    max-width: 100px;
-    margin-top: 30px;
-}
-
-/* Options Styles */
-.options {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    align-items: center;
-    margin: 50px;
-}
-
-/* Ticket Form Styles */
-.ticket-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    margin-top: 20px;
-    width: 100%;
-}
-.query-box {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px;
-    margin: 20px 0;
-    border: 2px solid #4CAF50;
-    border-radius: 10px;
-    background-color: #e8f5e9;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    font-family: 'Arial', sans-serif;
-}
-
-.query-box h2 {
-    color: #2e7d32;
-    font-size: 24px;
-    margin: 0;
-}
-
-.query-box p {
-    color: #388e3c;
-    font-size: 18px;
-    margin: 0 20px;
-}
-
-.query-box .raise-query-link {
-    display: inline-block;
-    padding: 10px 20px;
-    color: #ffffff;
-    background-color: #66bb6a;
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-}
-
-.query-box .raise-query-link:hover {
-    background-color: #4CAF50;
-}
+/* Error Message */
 .error-message {
     text-align: center;
-    color: darkgreen;
-    font-size: 2.5em;
+    color: #493628;
+    font-size: 2em;
     margin: 20px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .banner {
+        text-align: center;
+    }
+
+    .banner-content {
+        margin-right: 0;
+        padding: 0 20px;
+    }
+
+    .support-container {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .support-image {
+        order: 2;
+    }
+
+    .options {
+        order: 1;
+        align-items: center;
+    }
+
+    .ticket {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .query-box {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+        margin: 20px;
+    }
+
+    .faq-heading {
+        font-size: 2rem;
+    }
+
+    .faq-question h3 {
+        font-size: 1.2rem;
+    }
 }

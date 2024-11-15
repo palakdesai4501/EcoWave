@@ -2,6 +2,7 @@
 {% load static %}
 
 {% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/support.css' %}">
 {% endblock %}
 
 {% block content %}
@@ -13,13 +14,30 @@
 </div>
 
 <div class="support-container">
+    <div class="support-image">
+        <img src="{% static 'images/support-image.jpg' %}" alt="Customer Support" />
+    </div>
     <div class="options">
-        <a class="ticket hover:bg-green-600 hover:text-white" href="{% url 'support:submit_query' %}">Raise Query</a>
-        <a class="ticket hover:bg-green-600 hover:text-white" href="{% url 'support:faq' %}">FAQs</a>
-        <a class="ticket hover:bg-green-600 hover:text-white" href="{% url 'support:track_ticket' %}">Track Tickets</a>
+        <a class="ticket" href="{% url 'support:submit_query' %}">
+            <span class="ticket-text">Raise Query</span>
+        </a>
+        <a class="ticket" href="{% url 'support:faq' %}">
+            <span class="ticket-text">FAQs</span>
+        </a>
+        <a class="ticket" href="{% url 'support:track_ticket' %}">
+            <span class="ticket-text">Track Tickets</span>
+        </a>
         {% if user.is_staff or user.is_superuser %}
-            <a class="ticket hover:bg-green-600 hover:text-white" href="{% url 'support:ticket_input' %}">Update Ticket Status</a>
+        <a class="ticket" href="{% url 'support:ticket_input' %}">
+            <span class="ticket-text">Update Ticket Status</span>
+        </a>
         {% endif %}
     </div>
+</div>
+
+<div class="query-box">
+    <h2>Have a Question?</h2>
+    <p>Browse our FAQs or raise a new query</p>
+    <a href="{% url 'support:submit_query' %}" class="raise-query-link">Raise Query</a>
 </div>
 {% endblock %}
